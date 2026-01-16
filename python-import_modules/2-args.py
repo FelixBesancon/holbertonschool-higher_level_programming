@@ -10,4 +10,4 @@ if __name__ == "__main__":
         label = "arguments:"
     print("{} {}".format(argc, label))
     for index in range(1, argc + 1):
-       print("{}: {}".format(index, sys.argv[index]))
+        print("{}: {}".format(index, sys.argv[index]))
