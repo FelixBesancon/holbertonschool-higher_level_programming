@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    if not matrix:
-        return None
     new_matrix = []
+    if not matrix:
+        return new_matrix
     for row in matrix:
         new_row = []
         for value in row:
