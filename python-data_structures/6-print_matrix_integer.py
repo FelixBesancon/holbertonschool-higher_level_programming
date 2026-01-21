@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
     if matrix is None:
-        return
+        return 0
     for row in matrix:
         for index, value in enumerate(row):
             print("{}".format(value), end="")
