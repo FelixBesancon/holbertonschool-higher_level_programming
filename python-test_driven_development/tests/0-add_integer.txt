@@ -8,6 +8,9 @@ This file contains doctests for the add_integer function.
 >>> add_integer(1, -2)
 -1
 
+>>> add_integer(100, -2)
+98
+
 >>> add_integer(2)
 100
 
@@ -22,15 +25,21 @@ Traceback (most recent call last):
 ...
 SyntaxError: invalid syntax
 
->>> add_integer(102.9, -2)
+>>> add_integer(100.3, -2)
+98
+
+>>> add_integer(100.9, -2)
+98
+
+>>> add_integer(50.9, 50.9)
 100
 
->>> add_integer("Test", 1)
+>>> add_integer("School", 4)
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
 
->>> add_integer(1, "Test")
+>>> add_integer(3, "School")
 Traceback (most recent call last):
 ...
 TypeError: b must be an integer
