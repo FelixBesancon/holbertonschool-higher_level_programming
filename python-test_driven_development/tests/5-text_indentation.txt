@@ -1,0 +1,11 @@
+This file contains doctests for the text_indentation function.
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("test")
+test
+
+>>> text_indentation("test:test")
+test
+
+test
