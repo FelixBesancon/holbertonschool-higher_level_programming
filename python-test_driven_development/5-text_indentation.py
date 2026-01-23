@@ -18,7 +18,7 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     skip_space = False
     for letter in text:
-        if skip_space == True and letter == " ":
+        if skip_space is True and letter == " ":
             continue
         else:
             skip_space = False
