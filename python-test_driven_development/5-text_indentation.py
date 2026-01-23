@@ -16,10 +16,15 @@ def text_indentation(text):
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    skip_letter = False
+    skip_space = False
     for letter in text:
-        if skip_letter == False:
-            print("{}".format(letter), end="")
-        elif skip_letter == True and letter == " "
+        if skip_space == True and letter == " ":
+            continue
+        else:
+            skip_space = False
         if letter in (".", "?", ":"):
-            print("\n")
+            skip_space = True
+            print("{}\n".format(letter))
+            continue
+        else:
+            print("{}".format(letter), end="")

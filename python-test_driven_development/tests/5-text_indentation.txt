@@ -5,7 +5,75 @@ This file contains doctests for the text_indentation function.
 >>> text_indentation("test")
 test
 
->>> text_indentation("test:test")
+>>> text_indentation("test.test")
+test.
+<BLANKLINE>
 test
 
+>>> text_indentation("test?test")
+test?
+<BLANKLINE>
 test
+
+>>> text_indentation("test:test")
+test:
+<BLANKLINE>
+test
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
+
+>>> text_indentation(3)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(3.3)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation([1, 2, 3])
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation((1, 2, 3))
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation({1, 2, 3})
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation({"a": 1,"b": 2,"c": 3})
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(False)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
