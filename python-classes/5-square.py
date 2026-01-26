@@ -38,3 +38,15 @@ class Square:
         Returns the area of the square.
         """
         return self.size ** 2
+
+    def my_print(self):
+        """
+        Prints the square in stdout with the character '#'.
+        """
+        if self.size == 0:
+            print()
+        else:
+            for row in range(self.size):
+                for column in range(self.size):
+                    print("{}".format("#"), end="")
+                print()
