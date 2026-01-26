@@ -1,16 +1,27 @@
 #!/usr/bin/python3
 """
-This module defines the class Square.
+This module defines the class Square with:
+    Private instance attributes:
+        size.
+        position.
+    Private instance property and setters:
+        size.
+        position.
+    Public class methods:
+        area.
+        my_print.
 """
 
 
 class Square:
     """
-    Represents a square.
+    Represents a square with a size and a display position.
     """
     def __init__(self, size=0, position=(0, 0)):
         """
-        Initializes a Square instance with a given size and position.
+        Initializes a Square instance with:
+            size.
+            position.
         """
         self.size = size
         self.position = position
@@ -25,7 +36,7 @@ class Square:
     @property
     def position(self):
         """
-        Retrieves the position of the square.
+        Retrieves the current position of the square.
         """
         return self.__position
 
@@ -33,6 +44,10 @@ class Square:
     def size(self, value):
         """
         Sets the size of the square after validation.
+
+        Raises:
+            TypeError: If size is not an integer.
+            ValueError: If size is less than zero.
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
@@ -45,6 +60,9 @@ class Square:
     def position(self, value):
         """
         Sets the position of the square after validation.
+
+        Raises:
+            TypeError: If position is not a tuple of 2 positive integers.
         """
         if (
             not isinstance(value, tuple)
@@ -63,13 +81,15 @@ class Square:
 
     def area(self):
         """
-        Returns the area of the square.
+        Returns the area of the square,
+        calculated with the square of 'size'.
         """
         return self.size ** 2
 
     def my_print(self):
         """
-        Prints the square in stdout with the character '#'.
+        Prints the square to standard output with the character '#',
+        offset with 'position' by printing '\\n' and ' '.
         """
         pos_x, pos_y = self.position
         if self.size == 0:
