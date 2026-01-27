@@ -7,7 +7,7 @@ This module defines the class Square with:
     Private instance property and setters:
         size.
         position.
-    Public class methods:
+    Public instance methods:
         area.
         my_print.
 """
