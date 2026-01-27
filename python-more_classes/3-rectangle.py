@@ -7,6 +7,11 @@ This module defines the class Rectangle with:
     Private instance property and setters:
         width.
         height.
+    Private instance methods:
+        area.
+        perimeter.
+    Instance method:
+        __str__.
 """
 
 
