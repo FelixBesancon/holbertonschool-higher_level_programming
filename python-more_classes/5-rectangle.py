@@ -12,6 +12,8 @@ This module defines the class Rectangle with:
         perimeter.
     Special instance method:
         __str__.
+        __repr__.
+        __del__.
 """
 
 
@@ -93,7 +95,8 @@ class Rectangle:
     def __str__(self):
         """
         Returns a string representation of the rectangle,
-        using the '#' character.
+        using the '#' character, to be able to print by using
+        print() and str().
         If width or height is equal to 0, an empty string is returned
         """
         rec_str = ""
@@ -102,3 +105,20 @@ class Rectangle:
             rec_line += self.width * '#'
             rec_str = (rec_line + '\n') * (self.height - 1) + rec_line
         return rec_str
+
+    def __repr__(self):
+        """
+        Returns a string representation of the rectangle,
+        to be able to recreate a new instance by using eval().
+        """
+        rec_repr = str(self.__class__.__name__) + "("
+        if self.width != 0 or self.height != 0:
+            rec_repr += str(self.width) + ", " +str(self.height)
+        rec_repr += ")"
+        return rec_repr
+
+    def __del__(self):
+        """
+        Prints a message when an instance of Rectangle is deleted.
+        """
+        print("Bye rectangle...")
