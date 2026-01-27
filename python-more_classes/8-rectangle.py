@@ -1,24 +1,36 @@
 #!/usr/bin/python3
 """
 This module defines the class Rectangle with:
+    Public class attribute:
+        number_of_instances.
+        print_symbol.
     Private instance attributes:
         width.
         height.
     Private instance property and setters:
         width.
         height.
+    Static method:
+        bigger_or_equal.
     Public instance methods:
         area.
         perimeter.
     Special instance method:
         __str__.
+        __repr__.
+        __del__.
 """
 
 
 class Rectangle:
     """
-    Represents a rectangle.
+    Represents a rectangle with:
+        number_of_instances: The number of existing rectangles.
+        print_symbol: The element to display when printing.
     """
+    number_of_instances = 0
+    print_symbol = '#'
+
     def __init__(self, width=0, height=0):
         """
         Initializes a rectangle with:
@@ -27,6 +39,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -74,6 +87,24 @@ class Rectangle:
         else:
             self.__height = value
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """
+        Returns the biggest rectangle based on the area, if both are equal,
+        rect_1 is returned.
+
+        Raises:
+            TypeError: If either element is not an instance of Rectangle.
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        elif not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        elif area(rect_2) > area(rect_1):
+            return rect_2
+        else:
+            return rect_1
+
     def area(self):
         """
         Returns the area of the rectangle, calculated with
@@ -93,12 +124,31 @@ class Rectangle:
     def __str__(self):
         """
         Returns a string representation of the rectangle,
-        using the '#' character.
+        using the '#' character, to be able to print by using
+        print() and str().
         If width or height is equal to 0, an empty string is returned
         """
         rec_str = ""
         rec_line = ""
         if self.width != 0 and self.height != 0:
-            rec_line += self.width * '#'
+            rec_line += self.width * str(self.print_symbol)
             rec_str = (rec_line + '\n') * (self.height - 1) + rec_line
         return rec_str
+
+    def __repr__(self):
+        """
+        Returns a string representation of the rectangle,
+        to be able to recreate a new instance by using eval().
+        """
+        rec_repr = str(self.__class__.__name__) + "("
+        if self.width != 0 or self.height != 0:
+            rec_repr += str(self.width) + ", " + str(self.height)
+        rec_repr += ")"
+        return rec_repr
+
+    def __del__(self):
+        """
+        Prints a message when an instance of Rectangle is deleted.
+        """
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")

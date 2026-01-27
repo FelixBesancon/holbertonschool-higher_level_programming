@@ -22,7 +22,8 @@ This module defines the class Rectangle with:
 
 class Rectangle:
     """
-    Represents a rectangle.
+    Represents a rectangle with:
+        number_of_instances: The number of existing rectangles.
     """
     number_of_instances = 0
     print_symbol = '#'
@@ -30,8 +31,8 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """
         Initializes a rectangle with:
-            width.
-            height.
+            width: The horizontal size.
+            height: The vertical size.
         """
         self.width = width
         self.height = height
@@ -130,4 +131,3 @@ class Rectangle:
         """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-

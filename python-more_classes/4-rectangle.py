@@ -23,8 +23,8 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """
         Initializes a rectangle with:
-            width.
-            height.
+            width: The horizontal size.
+            height: The vertical size.
         """
         self.width = width
         self.height = height
