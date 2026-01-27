@@ -113,7 +113,7 @@ class Rectangle:
         """
         rec_repr = str(self.__class__.__name__) + "("
         if self.width != 0 or self.height != 0:
-            rec_repr += str(self.width) + ", " +str(self.height)
+            rec_repr += str(self.width) + ", " + str(self.height)
         rec_repr += ")"
         return rec_repr
 

@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
 This module defines the class Rectangle with:
+    Public class attribute:
+        number_of_instances.
     Private instance attributes:
         width.
         height.
@@ -13,6 +15,7 @@ This module defines the class Rectangle with:
     Special instance method:
         __str__.
         __repr__.
+        __del__.
 """
 
 
@@ -20,6 +23,8 @@ class Rectangle:
     """
     Represents a rectangle.
     """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """
         Initializes a rectangle with:
@@ -28,6 +33,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -115,3 +121,10 @@ class Rectangle:
             rec_repr += str(self.width) + ", " + str(self.height)
         rec_repr += ")"
         return rec_repr
+
+    def __del__(self):
+        """
+        Prints a message when an instance of Rectangle is deleted.
+        """
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
