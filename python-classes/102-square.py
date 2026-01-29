@@ -1,0 +1,84 @@
+#!/usr/bin/python3
+"""
+This module defines the class Square with:
+    Private instance attribute size.
+    Private instance property and setter size.
+    Public class method area.
+"""
+
+
+class Square:
+    """
+    Represents a square with a size.
+    """
+    def __init__(self, size=0):
+        """
+        Initializes a Square instance with size.
+        """
+        self.size = size
+
+    @property
+    def size(self):
+        """
+        Retrieves the current size of the square.
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """
+        Sets the size of the square after validation.
+
+        Raises:
+            TypeError: If size is not an integer.
+            ValueError: If size is less than zero.
+        """
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
+
+    def area(self):
+        """
+        Returns the area of the square,
+        calculated with the square of 'size'.
+        """
+        return self.size ** 2
+
+    def __eq__(self, other):
+        if not isinstance(other, Square):
+            return NotImplemented
+        else:
+            return self.area() == other.area()
+
+    def __ne__(self, other):
+        if not isinstance(other, Square):
+            return NotImplemented
+        else:
+            return self.area() != other.area()
+
+    def __lt__(self, other):
+        if not isinstance(other, Square):
+            return NotImplemented
+        else:
+            return self.area() < other.area()
+
+    def __le__(self, other):
+        if not isinstance(other, Square):
+            return NotImplemented
+        else:
+            return self.area() <= other.area()
+
+    def __gt__(self, other):
+        if not isinstance(other, Square):
+            return NotImplemented
+        else:
+            return self.area() > other.area()
+
+    def __ge__(self, other):
+        if not isinstance(other, Square):
+            return NotImplemented
+        else:
+            return self.area() >= other.area()
