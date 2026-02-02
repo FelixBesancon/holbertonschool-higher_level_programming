@@ -1,0 +1,12 @@
+This file contains doctests for the is_same_class function.
+
+>>> is_same_class = __import__('2-is_same_class').is_same_class
+
+>>> test_int = 33
+>>> test_str = "Testing is fun"
+
+>>> is_same_class(test_int, int)
+True
+
+>>> is_same_class(test_str, float)
+False
