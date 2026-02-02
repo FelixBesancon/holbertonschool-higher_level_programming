@@ -1,0 +1,107 @@
+This file contains doctests for the lookup function.
+
+>>> lookup = __import__('0-lookup').lookup
+
+>>> class Test_1(object):
+...     pass
+
+>>> test_object_1 = Test_1()
+
+>>> class Test_2(object):
+...     test_attribute = 33
+...     test_string = "Testing is great"
+...     def test_method(self):
+...         pass
+
+>>> test_object_2 = Test_2()
+
+>>> test_result_1 = lookup(Test_1)
+
+>>> test_result_2 = lookup(Test_2)
+
+>>> isinstance(lookup(None), list)
+True
+
+>>> isinstance(lookup(5), list)
+True
+
+>>> isinstance(test_result_1, list)
+True
+
+>>> isinstance(test_result_2, list)
+True
+
+>>> isinstance(lookup(test_object_1), list)
+True
+
+>>> isinstance(lookup(test_object_2), list)
+True
+
+>>> '__class__' in lookup(None)
+True
+
+>>> '__class__' in lookup(5)
+True
+
+>>> '__add__' in lookup(5)
+True
+
+>>> '__class__' in test_result_1
+True
+
+>>> '__class__' in test_result_2
+True
+
+>>> '__dict__' in test_result_1
+True
+
+>>> '__dict__' in test_result_2
+True
+
+>>> '__doc__' in test_result_1
+True
+
+>>> '__doc__' in test_result_2
+True
+
+>>> '__sizeof__' in test_result_1
+True
+
+>>> '__sizeof__' in test_result_2
+True
+
+>>> 'test_attribute' in test_result_1
+False
+
+>>> 'test_attribute' in test_result_2
+True
+
+>>> 'test_string' in test_result_1
+False
+
+>>> 'test_string' in test_result_2
+True
+
+>>> 'test_method' in test_result_1
+False
+
+>>> 'test_method' in test_result_2
+True
+
+>>> 'test_attribute' in lookup(test_object_1)
+False
+
+>>> 'test_attribute' in lookup(test_object_2)
+True
+
+>>> 'test_string' in lookup(test_object_1)
+False
+
+>>> 'test_string' in lookup(test_object_2)
+True
+
+>>> 'test_method' in lookup(test_object_1)
+False
+
+>>> 'test_method' in lookup(test_object_2)
+True
