@@ -13,11 +13,14 @@ Traceback (most recent call last):
 Exception: area() is not implemented
 
 >>> bg.integer_validator("true", True)
+Traceback (most recent call last):
+...
+TypeError: true must be an integer
 
 >>> bg.integer_validator("false", False)
 Traceback (most recent call last):
 ...
-ValueError: false must be greater than 0
+TypeError: false must be an integer
 
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
