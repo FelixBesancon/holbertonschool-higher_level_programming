@@ -18,7 +18,7 @@ class Square(Rectangle):
             size.
         """
         super().__init__(size, size)
-    
+
     def __str__(self):
         """
         Returns the following square description.
