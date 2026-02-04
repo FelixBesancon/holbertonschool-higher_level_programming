@@ -2,7 +2,6 @@
 """
 This module defines the class BaseGeometry.
 
-This module provides a base class used to build geometric shapes.
 It includes an unimplemented area method and a validator for integer values.
 """
 

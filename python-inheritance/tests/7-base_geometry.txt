@@ -2,7 +2,30 @@ This file contains doctests for the BaseGeometry class.
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
+>>> bg_2 = BaseGeometry()
+>>> issubclass(BaseGeometry, object)
+True
+>>> "area" in dir(BaseGeometry)
+True
+>>> "integer_validator" in dir(BaseGeometry)
+True
+
+#instances
 >>> type(bg) == BaseGeometry
+True
+>>> type(bg) == type(bg_2)
+True
+>>> bg == bg_2
+False
+>>> isinstance(bg, object)
+True
+>>> hasattr(bg, "area")
+True
+>>> hasattr(bg, "integer_validator")
+True
+>>> callable(bg.area)
+True
+>>> callable(bg.integer_validator)
 True
 
 # area()
@@ -33,6 +56,11 @@ TypeError: num_str must be an integer
 Traceback (most recent call last):
 ...
 TypeError: empty must be an integer
+
+>>> bg.integer_validator("age:cm", "12")
+Traceback (most recent call last):
+...
+TypeError: age:cm must be an integer
 
 >>> bg.integer_validator("pi", 3.14)
 Traceback (most recent call last):
@@ -91,6 +119,11 @@ Traceback (most recent call last):
 ...
 ValueError: age must be greater than 0
 
+>>> bg.integer_validator("age", -0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
 >>> bg.integer_validator("minus_one", -1)
 Traceback (most recent call last):
 ...
@@ -107,7 +140,7 @@ Traceback (most recent call last):
 ...
 TypeError:  must be an integer
 
->>> bg.integer_validator("distance (m)", 0)
+>>> bg.integer_validator("distance:m", int("0"))
 Traceback (most recent call last):
 ...
-ValueError: distance (m) must be greater than 0
+ValueError: distance:m must be greater than 0
