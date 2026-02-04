@@ -7,7 +7,8 @@ with inheritance of list type.
 
 class MyList(list):
     """
-    Represents a list.
+    Represents a list, subclass of type list,
+    with an additional print_sorted method.
     """
 
     def print_sorted(self):
