@@ -17,4 +17,5 @@ class Square(Rectangle):
         Initializes an instance of Square, with:
             size.
         """
+        self.__size = size
         super().__init__(size, size)
