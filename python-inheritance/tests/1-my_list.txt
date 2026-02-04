@@ -30,8 +30,10 @@ False
 # Empty list
 >>> my_list.print_sorted()
 []
->>> len(my_list) == 0
-True
+>>> print(my_list)
+[]
+>>> len(my_list)
+0
 
 # Adding element
 >>> my_list.append(33)
@@ -39,6 +41,8 @@ True
 33
 >>> my_list.append(32)
 >>> my_list.append(31)
+>>> len(my_list)
+3
 >>> my_list[-1]
 31
 >>> my_list[0]
@@ -47,7 +51,7 @@ True
 [33, 32, 31]
 >>> my_list.print_sorted()
 [31, 32, 33]
->>> my_list
+>>> print(my_list)
 [33, 32, 31]
 
 #type comparison
@@ -63,7 +67,7 @@ False
 >>> one = MyList([7])
 >>> one.print_sorted()
 [7]
->>> one
+>>> print(one)
 [7]
 
 # Basic example (must not modify original list)
@@ -72,35 +76,35 @@ False
 [1, 4, 2, 3, 5]
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
->>> my_list
+>>> print(my_list)
 [1, 4, 2, 3, 5]
 
 # Already sorted
 >>> sorted_list = MyList([1, 2, 3])
 >>> sorted_list.print_sorted()
 [1, 2, 3]
->>> sorted_list
+>>> print(sorted_list)
 [1, 2, 3]
 
 # Reverse sorted
 >>> rev = MyList([5, 4, 3, 2, 1])
 >>> rev.print_sorted()
 [1, 2, 3, 4, 5]
->>> rev
+>>> print(rev)
 [5, 4, 3, 2, 1]
 
 # Duplicates
 >>> dup = MyList([3, 1, 2, 3, 1])
 >>> dup.print_sorted()
 [1, 1, 2, 3, 3]
->>> dup
+>>> print(dup)
 [3, 1, 2, 3, 1]
 
 # Negatives
 >>> neg = MyList([0, -2, 5, -1])
 >>> neg.print_sorted()
 [-2, -1, 0, 5]
->>> neg
+>>> print(neg)
 [0, -2, 5, -1]
 
 # Other element types (outside the project assumption: "all int")
