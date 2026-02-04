@@ -12,29 +12,39 @@ Traceback (most recent call last):
 ...
 Exception: area() is not implemented
 
+>>> bg.integer_validator("true", True)
+Traceback (most recent call last):
+...
+TypeError: true must be an integer
+
+>>> bg.integer_validator("false", False)
+Traceback (most recent call last):
+...
+TypeError: false must be an integer
+
 >>> bg.integer_validator("", "John")
 Traceback (most recent call last):
 ...
 TypeError:  must be an integer
 
->>> bg.integer_validator("name", "")
+>>> bg.integer_validator("no_name", "")
 Traceback (most recent call last):
 ...
-TypeError: name must be an integer
+TypeError: no_name must be an integer
 
->>> bg.integer_validator("name", "John")
+>>> bg.integer_validator("my name", "John")
 Traceback (most recent call last):
 ...
-TypeError: name must be an integer
+TypeError: my name must be an integer
 
 >>> bg.integer_validator("name", 33)
 
->>> bg.integer_validator("age", 0)
+>>> bg.integer_validator("age (null)", 0)
 Traceback (most recent call last):
 ...
-ValueError: age must be greater than 0
+ValueError: age (null) must be greater than 0
 
->>> bg.integer_validator("age", 1)
+>>> bg.integer_validator("age_min", 1)
 
 >>> bg.integer_validator("distance", -4)
 Traceback (most recent call last):
