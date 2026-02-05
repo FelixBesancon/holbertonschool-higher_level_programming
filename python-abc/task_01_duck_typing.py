@@ -53,7 +53,7 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     """
-    Represents a Rectangle.
+    Represents a rectangle.
     """
 
     def __init__(self, width, height):
@@ -71,5 +71,5 @@ class Rectangle(Shape):
 
 def shape_info(shape):
     """Prints the area and perimeter of a shape."""
-    print("Area: {}".format(my_shape.area()))
-    print("Perimeter: {}".format(my_shape.perimeter()))
+    print("Area: {}".format(shape.area()))
+    print("Perimeter: {}".format(shape.perimeter()))
