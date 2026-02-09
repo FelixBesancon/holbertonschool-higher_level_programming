@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module provide the function from_json_string,
+This module provide the function save_to_json_file,
 that writes an object to a JSON text file.
 """
 
