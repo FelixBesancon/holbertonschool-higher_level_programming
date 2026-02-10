@@ -10,15 +10,16 @@ def pascal_triangle(n):
     the Pascal's triangle of n, Returns an empty list
     if n <= 0.
     """
-    pascal_list = []
+    triangle = []
     if n > 0:
-        row = 1
         for row in range(n):
-            pascal_list_int = []
-            column = 1
-            for column in range(row + 1):
-                pascal_list_int.append(1)
-                if 1 <= column < row:
-                    pascal_list_int[column] = pascal_list[row - 1][column - 1] + pascal_list[row - 1][column]
-            pascal_list.append(pascal_list_int)
-    return pascal_list
+            line = [1] * (row + 1)
+            for column in range(row):
+                if 1 <= column:
+                    line[column] = (
+                        triangle[row - 1][column - 1]
+                        + triangle[row - 1][column]
+                    )
+            triangle.append(line)
+
+    return triangle
