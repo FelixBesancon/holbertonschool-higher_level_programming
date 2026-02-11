@@ -5,9 +5,6 @@ that gives all attributes of an object.
 """
 
 
-import json
-
-
 def class_to_json(obj):
     """
     Returns the dictionary description with simple
