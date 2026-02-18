@@ -19,7 +19,7 @@ HTTP is the protocol used to **exchange data on the web**.
 
 **HTTP** stands for **HyperText Transfer Protocol**:
 - **HyperText**: originally, the web mainly carried linked text documents (web pages)
-- Transfer**: data is transferred from one point to another
+- **Transfer**: data is transferred from one point to another
 - **Protocol**: communication rules
 
 HTTP is used on the internet to:
@@ -35,7 +35,10 @@ Therefore, anyone who intercepts them can read:
 And sometimes, even sensitive information such as:
 - Passwords
 - Personal data...
-*Capture of an HTTP request with ireshark*
+
+---
+
+### *Capture of an HTTP request with Wireshark*
 ![HTTP capture](images/http.png)
 
 
@@ -54,5 +57,7 @@ This provides three essential features:
 Adding a security protocol to HTTP ensures that the data transmitted is protected, that it is not directed to a fake site, and that it cannot be modified during transport without being detected.
 HTTPS protects transport, not the overall security of the site.
 
-*Capture of an HTTPs request with ireshark*
+---
+
+### *Capture of an HTTPS request with Wireshark*
 ![HTTPS capture](images/https.png)
