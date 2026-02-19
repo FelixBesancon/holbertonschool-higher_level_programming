@@ -10,13 +10,16 @@ This module provides:
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
 class MyHandler(BaseHTTPRequestHandler):
-    """Handle HTTP GET requests."""
+    """Handle GET requests depending on the requested path."""
     def do_GET(self):
         """Send a simple text response."""
-        self.send_response(200)
-        self.send_header("Content-Type", "text/plain")
-        self.end_headers()
-        self.wfile.write(b"Hello, this is a simple API!")
+        if self.path == "/":
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Hello, this is a simple API!")
+        elif self.path == "/data":
+            pass
 
 server = HTTPServer(("localhost", 8000), MyHandler)
 server.serve_forever()
