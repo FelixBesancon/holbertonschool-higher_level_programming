@@ -96,7 +96,6 @@ def login():
         return jsonify({"access_token": access_token})
 
 
-
 @app.route("/jwt-protected")
 @jwt_required()
 def jwt_protected():
@@ -105,6 +104,21 @@ def jwt_protected():
     Accessible only with a valid JWT token.
     """
     return "JWT Auth: Access Granted"
+
+
+@app.route("/admin-only")
+@jwt_required()
+def admin_only():
+    """
+    JWT protected route.
+    Accessible only with a valid JWT token and admin role.
+    """
+    user = get_jwt_identity()
+    if user["role"] != "admin":
+        return jsonify({"error": "Admin access required"}), 403
+
+    else:
+        return "Admin Access: Granted"
 
 
 @jwt.unauthorized_loader
