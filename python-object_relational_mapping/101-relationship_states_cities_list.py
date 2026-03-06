@@ -19,6 +19,7 @@ if __name__ == "__main__":
             ),
         pool_pre_ping=True
         )
+    Base.metadata.create_all(engine)
 
     session = Session(engine)
 
@@ -28,7 +29,7 @@ if __name__ == "__main__":
         .order_by(State.id)
         .all()
     )
-    
+
     for state in states_list:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
