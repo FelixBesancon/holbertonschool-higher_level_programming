@@ -17,14 +17,12 @@ if __name__ == "__main__":
         )
     cur = conn.cursor()
 
-    query = (
-        "SELECT id, name "
+    cur.execute(
+        "SELECT * "
         "FROM states "
         "WHERE name = '{}' "
-        "ORDER BY id ASC"
-    ).format(sys.argv[4])
-
-    cur.execute(query)
+        "ORDER BY id ASC ".format(sys.argv[4])
+        )
 
     rows = cur.fetchall()
     for row in rows:

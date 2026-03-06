@@ -18,7 +18,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     cur.execute(
-        "SELECT id, name "
+        "SELECT * "
         "FROM states "
         "ORDER BY id ASC"
         )
