@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all State objects and their related City objects. 
+Lists all State objects and their related City objects.
 """
 
 
