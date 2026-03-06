@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Defines the City class and its mapping to the MySQL table states.
+Defines the City class and its mapping to the MySQL table cities.
 """
 
 

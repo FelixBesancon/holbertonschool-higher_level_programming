@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Defines the City class related to State class,
-and its mapping to the MySQL table states.
+and its mapping to the MySQL table cities.
 """
 
 
