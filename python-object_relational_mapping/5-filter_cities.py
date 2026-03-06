@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-
+Lists all cities of a given state from the database.
+Results are displayed in ascending order by cities.id.
 """
 import MySQLdb
 import sys
@@ -22,7 +23,7 @@ if __name__ == "__main__":
         "JOIN states "
         "ON cities.state_id = states.id "
         "WHERE BINARY states.name = %s "
-        "ORDER BY cities.id ASC ",
+        "ORDER BY cities.id ASC",
         (sys.argv[4],)
         )
 
