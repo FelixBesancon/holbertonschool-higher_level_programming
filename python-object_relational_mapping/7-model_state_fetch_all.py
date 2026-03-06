@@ -16,7 +16,7 @@ if __name__ == "__main__":
             sys.argv[2],
             sys.argv[3]
             ),
-            pool_pre_ping=True
+        pool_pre_ping=True
         )
     session = Session(engine)
     states_list = session.query(State).order_by(State.id).all()
