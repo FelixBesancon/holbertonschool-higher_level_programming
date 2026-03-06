@@ -8,7 +8,7 @@ import sys
 from relationship_state import Base, State
 from relationship_city import City
 from sqlalchemy import (create_engine)
-from sqlalchemy.orm import Session, joinedload
+from sqlalchemy.orm import Session
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -25,7 +25,6 @@ if __name__ == "__main__":
 
     states_list = (
         session.query(State)
-        .options(joinedload(State.cities))
         .order_by(State.id)
         .all()
     )
