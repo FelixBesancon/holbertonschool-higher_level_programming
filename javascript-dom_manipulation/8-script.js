@@ -5,4 +5,4 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
       hello.textContent = data.hello;
     });
-  });
+});
