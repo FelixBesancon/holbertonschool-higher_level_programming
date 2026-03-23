@@ -17,5 +17,4 @@ document.addEventListener('DOMContentLoaded', () => {
   clearList.addEventListener('click', () => {
     myList.querySelectorAll('li').forEach(li => li.remove());
   });
-
 });
