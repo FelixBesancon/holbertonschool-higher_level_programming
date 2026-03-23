@@ -37,6 +37,7 @@ The goal of this repository is to document my progression through higher-level p
 ### APIs & JavaScript
 - `restful-api`
 - `javascript-warm_up`
+- `JavaScript DOM manipulation`
 
 ---
 
@@ -92,7 +93,9 @@ holbertonschool-higher_level_programming/
 ├── SQL_introduction/
 ├── SQL_more_queries/
 ├── python-object_relational_mapping/
-└── javascript-warm_up/
+├── javascript-warm_up/
+└── javascript-dom_manipulation/
+
 ```
 
 ---
@@ -110,7 +113,7 @@ Through these projects, I worked on:
 - SQL querying and relational databases
 - ORM with SQLAlchemy
 - REST API concepts and backend foundations
-- JavaScript scripting fundamentals
+- JavaScript scripting fundamentals and Document Object Model
 
 ---
 
