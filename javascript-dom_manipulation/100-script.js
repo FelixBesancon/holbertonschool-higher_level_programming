@@ -3,20 +3,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const removeItem = document.querySelector('#remove_item');
   const clearList = document.querySelector('#clear_list');
   const myList = document.querySelector('ul.my_list');
-  
-  addItem.addEventListener('click', => {
+
+  addItem.addEventListener('click', () => {
     const li = document.createElement('li');
     li.textContent = 'Item';
     myList.appendChild(li);
   });
 
-  removeItem.addEventListener('click', => {
+  removeItem.addEventListener('click', () => {
     myList.lastElementChild.remove();
   });
 
-  clearList.addEventListener('click', => {
-    myList.forEach (element =>
-      element.remove());
+  clearList.addEventListener('click', () => {
+    myList.querySelectorAll('li').forEach(li => li.remove());
   });
 
 });
